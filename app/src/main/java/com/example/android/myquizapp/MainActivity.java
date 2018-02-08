@@ -15,43 +15,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        RadioButton rb1 = findViewById(R.id.bells_palsy);
-        this.rb1 = rb1;
-        RadioButton rb2 = findViewById(R.id.bells_phenomenon);
-        this.rb2 = rb2;
-        RadioButton rb3 = findViewById(R.id.chvostek_sign);
-        this.rb3 = rb3;
-
-        CheckBox cb1 = findViewById(R.id.q2_same_frequency_in_children_and_adults);
-        this.cb1 = cb1;
-        CheckBox cb2 = findViewById(R.id.q2_presents_with_meningism);
-        this.cb2 = cb2;
-        CheckBox cb3 = findViewById(R.id.q2_presents_with_fits);
-        this.cb3 = cb3;
-        CheckBox cb4 = findViewById(R.id.q2_csf_shows_protozoites);
-        this.cb4 = cb4;
-        CheckBox cb5 = findViewById(R.id.q2_chloroquine_is_doc);
-        this.cb5 = cb5;
-
-        RadioButton rb1_q3 = findViewById(R.id.q3_head_injury);
-        this.rb1_q3 = rb1_q3;
-        RadioButton rb2_q3 = findViewById(R.id.q3_birth_injury);
-        this.rb2_q3 = rb2_q3;
-        RadioButton rb3_q3 = findViewById(R.id.q3_cerebral_infarct);
-        this.rb3_q3 = rb3_q3;
-        RadioButton rb4_q3 = findViewById(R.id.q3_brain_tumor);
-        this.rb4_q3 = rb4_q3;
-        RadioButton rb5_q3 = findViewById(R.id.q3_idiopathic);
-        this.rb5_q3 = rb5_q3;
-
-        EditText ed = findViewById(R.id.q4_radial_nerve);
-        this.ed = ed;
-    }
     int totalScore = 0;
     final int totalNumberOfQuestion = 4;
 
@@ -73,6 +36,29 @@ public class MainActivity extends AppCompatActivity {
 
     EditText ed;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        rb1 = findViewById(R.id.bells_palsy);
+        rb2 = findViewById(R.id.bells_phenomenon);
+        rb3 = findViewById(R.id.chvostek_sign);
+
+        cb1 = findViewById(R.id.q2_same_frequency_in_children_and_adults);
+        cb2 = findViewById(R.id.q2_presents_with_meningism);
+        cb3 = findViewById(R.id.q2_presents_with_fits);
+        cb4 = findViewById(R.id.q2_csf_shows_protozoites);
+        cb5 = findViewById(R.id.q2_chloroquine_is_doc);
+
+        rb1_q3 = findViewById(R.id.q3_head_injury);
+        rb2_q3 = findViewById(R.id.q3_birth_injury);
+        rb3_q3 = findViewById(R.id.q3_cerebral_infarct);
+        rb4_q3 = findViewById(R.id.q3_brain_tumor);
+        rb5_q3 = findViewById(R.id.q3_idiopathic);
+
+        ed = findViewById(R.id.q4_radial_nerve);
+    }
 
     public void evaluateResponseOne(View view) {
 
@@ -225,10 +211,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void questionFour(){
-        String checkEditTextValue = ed.toString().replaceAll("\\s","" ).toLowerCase();
+        String checkEditTextValue = ed.getText().toString().replaceAll("\\s","" ).toLowerCase();
         Log.i("MainActivity.jav",checkEditTextValue);
         //String answer = "radialnerve";
-        if (checkEditTextValue == "radialnerve"){
+        if (checkEditTextValue.matches("radial nerve") ){
             totalScore++;
         }
     }
