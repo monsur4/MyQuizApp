@@ -47,7 +47,7 @@
                     android:id="@+id/bells_palsy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="evaluateResponse"
+                    android:onClick="evaluateResponseOne"
                     android:text="Bell's Palsy"
                     android:textColor="@android:color/black" />
 
@@ -55,7 +55,7 @@
                     android:id="@+id/bells_phenomenon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="evaluateResponse"
+                    android:onClick="evaluateResponseOne"
                     android:text="Bell's Phenomenon"
                     android:textColor="@android:color/black" />
 
@@ -63,7 +63,7 @@
                     android:id="@+id/chvostek_sign"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="evaluateResponse"
+                    android:onClick="evaluateResponseOne"
                     android:text="Chvostek Sign"
                     android:textColor="@android:color/black" />
 
@@ -84,7 +84,7 @@
                 android:text="is commoner in the same frequency in children and adults"
                 android:textColor="@android:color/black"
                 android:id="@+id/q2_same_frequency_in_children_and_adults"
-                android:onClick="evalauteQuestionThree"/>
+                android:onClick="evaluateResponseTwo"/>
 
             <CheckBox
                 android:layout_width="match_parent"
@@ -92,7 +92,7 @@
                 android:text="may present with meningism"
                 android:textColor="@android:color/black"
                 android:id="@+id/q2_presents_with_meningism"
-                android:onClick="evalauteQuestionThree"/>
+                android:onClick="evaluateResponseTwo"/>
 
             <CheckBox
                 android:layout_width="match_parent"
@@ -100,7 +100,7 @@
                 android:text="may present with fits"
                 android:textColor="@android:color/black"
                 android:id="@+id/q2_presents_with_fits"
-                android:onClick="evalauteQuestionThree"/>
+                android:onClick="evaluateResponseTwo"/>
 
             <CheckBox
                 android:layout_width="match_parent"
@@ -108,7 +108,7 @@
                 android:text="the csf characteristically shows protozoites"
                 android:textColor="@android:color/black"
                 android:id="@+id/q2_csf_shows_protozoites"
-                android:onClick="evalauteQuestionThree"/>
+                android:onClick="evaluateResponseTwo"/>
 
             <CheckBox
                 android:layout_width="match_parent"
@@ -116,7 +116,7 @@
                 android:text="parenteral chloroquine is the drug of choice in its management"
                 android:textColor="@android:color/black"
                 android:id="@+id/q2_chloroquine_is_doc"
-                android:onClick="evalauteQuestionThree"/>
+                android:onClick="evaluateResponseTwo"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -137,35 +137,40 @@
                     android:layout_height="wrap_content"
                     android:text="Head injury"
                     android:textColor="@android:color/black"
-                    android:id="@+id/q3_head_injury"/>
+                    android:id="@+id/q3_head_injury"
+                    android:onClick="evaluateResponseThree"/>
 
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Birth injury"
                     android:textColor="@android:color/black"
-                    android:id="@+id/q3_birth_injury"/>
+                    android:id="@+id/q3_birth_injury"
+                    android:onClick="evaluateResponseThree"/>
 
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Cerebral infarct"
                     android:textColor="@android:color/black"
-                    android:id="@+id/q3_cerebral_infarct"/>
+                    android:id="@+id/q3_cerebral_infarct"
+                    android:onClick="evaluateResponseThree"/>
 
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Brain tumor"
                     android:textColor="@android:color/black"
-                    android:id="@+id/q3_brain_tumor"/>
+                    android:id="@+id/q3_brain_tumor"
+                    android:onClick="evaluateResponseThree"/>
 
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Idiopathic"
                     android:textColor="@android:color/black"
-                    android:id="@+id/q3_idiopathic"/>
+                    android:id="@+id/q3_idiopathic"
+                    android:onClick="evaluateResponseThree"/>
 
             </RadioGroup>
 
@@ -186,7 +191,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:id="@+id/q4_radial_nerve"/>
+                android:id="@+id/q4_radial_nerve" />
 
             <Button
                 android:layout_width="wrap_content"
