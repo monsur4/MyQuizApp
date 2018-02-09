@@ -212,9 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void questionFour(){
         String checkEditTextValue = ed.getText().toString().replaceAll("\\s","" ).toLowerCase();
-        Log.i("MainActivity.jav",checkEditTextValue);
-        //String answer = "radialnerve";
-        if (checkEditTextValue.matches("radial nerve") ){
+        if (checkEditTextValue.matches("wristdrop") ){
             totalScore++;
         }
     }
