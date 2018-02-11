@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     int totalScore = 0;
     final int totalNumberOfQuestion = 4;
+
+    RadioGroup rg_q1;
 
     RadioButton rb1;
     RadioButton rb2;
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     CheckBox cb3;
     CheckBox cb4;
     CheckBox cb5;
+
+    RadioGroup rg_q3;
 
     RadioButton rb1_q3;
     RadioButton rb2_q3;
@@ -42,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        rg_q1 = findViewById(R.id.radiogroup_q1);
+
         rb1 = findViewById(R.id.bells_palsy);
         rb2 = findViewById(R.id.bells_phenomenon);
         rb3 = findViewById(R.id.chvostek_sign);
@@ -51,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         cb3 = findViewById(R.id.q2_presents_with_fits);
         cb4 = findViewById(R.id.q2_csf_shows_protozoites);
         cb5 = findViewById(R.id.q2_chloroquine_is_doc);
+
+        rg_q3 = findViewById(R.id.radiogroup_q3);
 
         rb1_q3 = findViewById(R.id.q3_head_injury);
         rb2_q3 = findViewById(R.id.q3_birth_injury);
@@ -218,7 +227,67 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void reset (){
+    public void reset (View view){
+        //deselect all the selected options
+        rg_q1.clearCheck();
+
+        cb1.setChecked(false);
+        cb2.setChecked(false);
+        cb3.setChecked(false);
+        cb4.setChecked(false);
+        cb5.setChecked(false);
+
+        rg_q3.clearCheck();
+
+        //clear the editText field
+        ed.setText("");
+
+        //reset the appearance of all selected options
+        rb1.setTypeface(null, Typeface.NORMAL);
+        rb2.setTypeface(null, Typeface.NORMAL);
+        rb3.setTypeface(null, Typeface.NORMAL);
+
+        cb1.setTypeface(null, Typeface.NORMAL);
+        cb2.setTypeface(null, Typeface.NORMAL);
+        cb3.setTypeface(null, Typeface.NORMAL);
+        cb4.setTypeface(null, Typeface.NORMAL);
+        cb5.setTypeface(null, Typeface.NORMAL);
+
+        rb1_q3.setTypeface(null, Typeface.NORMAL);
+        rb2_q3.setTypeface(null, Typeface.NORMAL);
+        rb3_q3.setTypeface(null, Typeface.NORMAL);
+        rb4_q3.setTypeface(null, Typeface.NORMAL);
+        rb5_q3.setTypeface(null, Typeface.NORMAL);
+
+        //reset the appearance of the correct options
+        rb1.setTextAppearance(R.style.AppTheme);
+
+        cb2.setTextAppearance(R.style.AppTheme);
+        cb3.setTextAppearance(R.style.AppTheme);
+
+        rb3_q3.setTextAppearance(R.style.AppTheme);
+
+        ed.setTextAppearance(R.style.AppTheme);
+
+        //make the options selectable again
+        rb1.setClickable(true);
+        rb2.setClickable(true);
+        rb3.setClickable(true);
+
+        cb1.setClickable(true);
+        cb2.setClickable(true);
+        cb3.setClickable(true);
+        cb4.setClickable(true);
+        cb5.setClickable(true);
+
+        rb1_q3.setClickable(true);
+        rb2_q3.setClickable(true);
+        rb3_q3.setClickable(true);
+        rb4_q3.setClickable(true);
+        rb5_q3.setClickable(true);
+
+        ed.setEnabled(true);
+
         totalScore = 0;
     }
 
@@ -268,7 +337,5 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, toastMessage, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
-
-        reset();
     }
 }
