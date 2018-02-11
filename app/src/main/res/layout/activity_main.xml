@@ -193,13 +193,29 @@
                 android:layout_marginBottom="8dp"
                 android:id="@+id/q4_radial_nerve" />
 
-            <Button
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_gravity="center"
-                android:text="Submit"
-                android:onClick="submitButton"/>
+                android:layout_alignParentBottom="true">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reset"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Submit"
+                    android:onClick="submitButton"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View Answer"/>
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

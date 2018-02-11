@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -221,11 +222,47 @@ public class MainActivity extends AppCompatActivity {
         totalScore = 0;
     }
 
+    public void evaluateCorrectOptions(){
+        if (rb1.isChecked()==true) {
+            rb1.setTextAppearance(R.style.CorrectOptions);
+        }
+        rb1.setClickable(false);
+        rb2.setClickable(false);
+        rb3.setClickable(false);
+
+        if (cb1.isChecked()==false && cb2.isChecked()==true && cb3.isChecked() ==true && cb4.isChecked()==false && cb5.isChecked()==false) {
+            cb2.setTextAppearance(R.style.CorrectOptions);
+            cb3.setTextAppearance(R.style.CorrectOptions);
+        }
+        cb1.setClickable(false);
+        cb2.setClickable(false);
+        cb3.setClickable(false);
+        cb4.setClickable(false);
+        cb5.setClickable(false);
+
+        if (rb3_q3.isChecked()){
+            rb3_q3.setTextAppearance(R.style.CorrectOptions);
+        }
+        rb1_q3.setClickable(false);
+        rb2_q3.setClickable(false);
+        rb3_q3.setClickable(false);
+        rb4_q3.setClickable(false);
+        rb5_q3.setClickable(false);
+
+        String checkEditTextValue = ed.getText().toString().replaceAll("\\s","" ).toLowerCase();
+        if (checkEditTextValue.matches("wristdrop") ){
+            ed.setTextAppearance(R.style.CorrectOptions);
+        }
+        ed.setEnabled(false);
+    }
+
     public void submitButton (View view) {
         questionOne();
         questionTwo();
         questionThree();
         questionFour();
+
+        evaluateCorrectOptions();
 
         String toastMessage = "You have scored: " + totalScore + " point out of " + totalNumberOfQuestion + " questions.";
         Toast toast = Toast.makeText(this, toastMessage, Toast.LENGTH_LONG);
