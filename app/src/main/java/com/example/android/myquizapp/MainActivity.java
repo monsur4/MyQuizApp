@@ -338,6 +338,8 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, toastMessage, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
+
+        (findViewById(R.id.view_answer)).setEnabled(true);
     }
 
     public void viewAnswer (View view){

@@ -222,7 +222,9 @@
                     android:layout_weight="1"
                     android:layout_margin="4dp"
                     android:text="View Answer"
-                    android:onClick="viewAnswer"/>
+                    android:onClick="viewAnswer"
+                    android:enabled="false"
+                    android:id="@+id/view_answer"/>
 
             </LinearLayout>
 

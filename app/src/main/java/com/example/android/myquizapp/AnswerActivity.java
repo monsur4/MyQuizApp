@@ -40,7 +40,7 @@ public class AnswerActivity extends AppCompatActivity {
     }
 
     public void feedback (View view){
-        String url = "http://www.livescore.com";
+        String url = "http://bit.ly/2H2PpyZ";
         Intent fb = new Intent(Intent.ACTION_VIEW);
         fb.setData(Uri.parse(url));
 
@@ -49,6 +49,20 @@ public class AnswerActivity extends AppCompatActivity {
         }
         else {
             Toast noBrowser = Toast.makeText(this, "You will need to install a browser to be able to provide a feedback", Toast.LENGTH_LONG);
+            noBrowser.show();
+        }
+    }
+
+    public void supportUs (View view){
+        String url = "http://bit.ly/2EXeXgA";
+        Intent su = new Intent(Intent.ACTION_VIEW);
+        su.setData(Uri.parse(url));
+
+        if (su.resolveActivity(getPackageManager()) != null){
+            startActivity(su);
+        }
+        else {
+            Toast noBrowser = Toast.makeText(this, "You will need to install a browser to be able to fill the form", Toast.LENGTH_LONG);
             noBrowser.show();
         }
     }
