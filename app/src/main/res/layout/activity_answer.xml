@@ -1,9 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.myquizapp.AnswerActivity">
+    tools:context="com.example.android.myquizapp.MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        android:src="@drawable/brain_2" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/scrim"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question 1: What is this presentation called?"
+                android:textSize="18sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bells"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center"/>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/radiogroup_q1">
+
+                <RadioButton
+                    android:id="@+id/bells_palsy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="evaluateResponseOne"
+                    android:text="Bell's Palsy"
+                    android:textColor="@android:color/black"
+                    android:clickable="false" />
+
+                <RadioButton
+                    android:id="@+id/bells_phenomenon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="evaluateResponseOne"
+                    android:text="Bell's Phenomenon"
+                    android:textColor="@android:color/black"
+                    android:clickable="false"/>
+
+                <RadioButton
+                    android:id="@+id/chvostek_sign"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="evaluateResponseOne"
+                    android:text="Chvostek Sign"
+                    android:textColor="@android:color/black"
+                    android:clickable="false"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question 2: Cerebral malaria:"
+                android:textSize="18sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"/>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="is commoner in the same frequency in children and adults"
+                android:textColor="@android:color/black"
+                android:id="@+id/q2_same_frequency_in_children_and_adults"
+                android:onClick="evaluateResponseTwo"
+                android:clickable="false"/>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="may present with meningism"
+                android:textColor="@android:color/black"
+                android:id="@+id/q2_presents_with_meningism"
+                android:onClick="evaluateResponseTwo"
+                android:clickable="false"/>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="may present with fits"
+                android:textColor="@android:color/black"
+                android:id="@+id/q2_presents_with_fits"
+                android:onClick="evaluateResponseTwo"
+                android:clickable="false"/>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="the csf characteristically shows protozoites"
+                android:textColor="@android:color/black"
+                android:id="@+id/q2_csf_shows_protozoites"
+                android:onClick="evaluateResponseTwo"
+                android:clickable="false"/>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="parenteral chloroquine is the drug of choice in its management"
+                android:textColor="@android:color/black"
+                android:id="@+id/q2_chloroquine_is_doc"
+                android:onClick="evaluateResponseTwo"
+                android:clickable="false"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question 3: A 12 year old boy with sickle cell disease is diagnosed as having epilepsy, the most likely cause is?"
+                android:textSize="18sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/radiogroup_q3"
+                android:clickable="false">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Head injury"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/q3_head_injury"
+                    android:onClick="evaluateResponseThree"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Birth injury"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/q3_birth_injury"
+                    android:onClick="evaluateResponseThree"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cerebral infarct"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/q3_cerebral_infarct"
+                    android:onClick="evaluateResponseThree"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Brain tumor"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/q3_brain_tumor"
+                    android:onClick="evaluateResponseThree"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Idiopathic"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/q3_idiopathic"
+                    android:onClick="evaluateResponseThree"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question 4: Injury to  the radial nerve in the radial groove will cause a common clinical condition called?"
+                android:textSize="18sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Answer"
+                android:inputType="textCapWords"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/q4_radial_nerve"
+                android:clickable="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:text="Feedback"
+                    android:onClick="feedback"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:text="Support us"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

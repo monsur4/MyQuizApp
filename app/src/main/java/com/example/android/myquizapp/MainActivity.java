@@ -1,5 +1,6 @@
 package com.example.android.myquizapp;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -227,6 +228,40 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void evaluateCorrectOptions(){
+        if (rb1.isChecked()==true) {
+            rb1.setTextAppearance(R.style.CorrectOptions);
+        }
+        rb1.setClickable(false);
+        rb2.setClickable(false);
+        rb3.setClickable(false);
+
+        if (cb1.isChecked()==false && cb2.isChecked()==true && cb3.isChecked() ==true && cb4.isChecked()==false && cb5.isChecked()==false) {
+            cb2.setTextAppearance(R.style.CorrectOptions);
+            cb3.setTextAppearance(R.style.CorrectOptions);
+        }
+        cb1.setClickable(false);
+        cb2.setClickable(false);
+        cb3.setClickable(false);
+        cb4.setClickable(false);
+        cb5.setClickable(false);
+
+        if (rb3_q3.isChecked()){
+            rb3_q3.setTextAppearance(R.style.CorrectOptions);
+        }
+        rb1_q3.setClickable(false);
+        rb2_q3.setClickable(false);
+        rb3_q3.setClickable(false);
+        rb4_q3.setClickable(false);
+        rb5_q3.setClickable(false);
+
+        String checkEditTextValue = ed.getText().toString().replaceAll("\\s","" ).toLowerCase();
+        if (checkEditTextValue.matches("wristdrop") ){
+            ed.setTextAppearance(R.style.CorrectOptions);
+        }
+        ed.setEnabled(false);
+    }
+
     public void reset (View view){
         //deselect all the selected options
         rg_q1.clearCheck();
@@ -291,40 +326,6 @@ public class MainActivity extends AppCompatActivity {
         totalScore = 0;
     }
 
-    public void evaluateCorrectOptions(){
-        if (rb1.isChecked()==true) {
-            rb1.setTextAppearance(R.style.CorrectOptions);
-        }
-        rb1.setClickable(false);
-        rb2.setClickable(false);
-        rb3.setClickable(false);
-
-        if (cb1.isChecked()==false && cb2.isChecked()==true && cb3.isChecked() ==true && cb4.isChecked()==false && cb5.isChecked()==false) {
-            cb2.setTextAppearance(R.style.CorrectOptions);
-            cb3.setTextAppearance(R.style.CorrectOptions);
-        }
-        cb1.setClickable(false);
-        cb2.setClickable(false);
-        cb3.setClickable(false);
-        cb4.setClickable(false);
-        cb5.setClickable(false);
-
-        if (rb3_q3.isChecked()){
-            rb3_q3.setTextAppearance(R.style.CorrectOptions);
-        }
-        rb1_q3.setClickable(false);
-        rb2_q3.setClickable(false);
-        rb3_q3.setClickable(false);
-        rb4_q3.setClickable(false);
-        rb5_q3.setClickable(false);
-
-        String checkEditTextValue = ed.getText().toString().replaceAll("\\s","" ).toLowerCase();
-        if (checkEditTextValue.matches("wristdrop") ){
-            ed.setTextAppearance(R.style.CorrectOptions);
-        }
-        ed.setEnabled(false);
-    }
-
     public void submitButton (View view) {
         questionOne();
         questionTwo();
@@ -337,5 +338,10 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, toastMessage, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
+    }
+
+    public void viewAnswer (View view){
+        Intent answers = new Intent(MainActivity.this,AnswerActivity.class);
+        startActivity(answers);
     }
 }
