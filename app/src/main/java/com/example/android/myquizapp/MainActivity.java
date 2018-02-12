@@ -2,6 +2,7 @@ package com.example.android.myquizapp;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -230,15 +231,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void evaluateCorrectOptions(){
         if (rb1.isChecked()==true) {
-            rb1.setTextAppearance(R.style.CorrectOptions);
+                rb1.setTextColor(getResources().getColor(R.color.green));
         }
         rb1.setClickable(false);
         rb2.setClickable(false);
         rb3.setClickable(false);
 
         if (cb1.isChecked()==false && cb2.isChecked()==true && cb3.isChecked() ==true && cb4.isChecked()==false && cb5.isChecked()==false) {
-            cb2.setTextAppearance(R.style.CorrectOptions);
-            cb3.setTextAppearance(R.style.CorrectOptions);
+                cb2.setTextColor(getResources().getColor(R.color.green));
+                cb3.setTextColor(getResources().getColor(R.color.green));
         }
         cb1.setClickable(false);
         cb2.setClickable(false);
@@ -247,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
         cb5.setClickable(false);
 
         if (rb3_q3.isChecked()){
-            rb3_q3.setTextAppearance(R.style.CorrectOptions);
+                rb3_q3.setTextColor(getResources().getColor(R.color.green));
         }
         rb1_q3.setClickable(false);
         rb2_q3.setClickable(false);
@@ -257,7 +258,8 @@ public class MainActivity extends AppCompatActivity {
 
         String checkEditTextValue = ed.getText().toString().replaceAll("\\s","" ).toLowerCase();
         if (checkEditTextValue.matches("wristdrop") ){
-            ed.setTextAppearance(R.style.CorrectOptions);
+            ed.setTypeface(null, Typeface.BOLD_ITALIC);
+            ed.setTextColor(getResources().getColor(R.color.green));
         }
         ed.setEnabled(false);
     }
@@ -294,15 +296,15 @@ public class MainActivity extends AppCompatActivity {
         rb4_q3.setTypeface(null, Typeface.NORMAL);
         rb5_q3.setTypeface(null, Typeface.NORMAL);
 
-        //reset the appearance of the correct options
-        rb1.setTextAppearance(R.style.AppTheme);
+        //reset the color of the correct options
+        rb1.setTextColor(R.style.AppTheme);
 
-        cb2.setTextAppearance(R.style.AppTheme);
-        cb3.setTextAppearance(R.style.AppTheme);
+        cb2.setTextColor(R.style.AppTheme);
+        cb3.setTextColor(R.style.AppTheme);
 
-        rb3_q3.setTextAppearance(R.style.AppTheme);
+        rb3_q3.setTextColor(R.style.AppTheme);
 
-        ed.setTextAppearance(R.style.AppTheme);
+        ed.setTextColor(R.style.AppTheme);
 
         //make the options selectable again
         rb1.setClickable(true);
